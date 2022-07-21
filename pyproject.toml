@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flamemm"
+version = "1.0"
+authors = [
+  { name="Alexander Ploshkin", email="alexploshkin@gmail.com" },
+]
+description = "A simple package for FLAME morphable model inference."
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "wheel",
+    "numpy",
+    "scipy",
+    "chumpy",
+    "torch>=1.8"
+]
+
+[tool.hatch.build]
+include = [
+  "flamemm/*.py"
+]
+artifacts = [
+  "resources"
+]
+
+[tool.hatch.build.sources]
+"resources" = "flamemm/resources"
+
+[project.urls]
+"Homepage" = "https://github.com/ploshkin/flamemm"
+"Bug Tracker" = "https://github.com/ploshkin/flamemm/issues"
